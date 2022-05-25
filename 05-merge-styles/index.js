@@ -12,7 +12,7 @@ fs.rm(path.join(__dirname, "project-dist", "bundle.css"), () => {
             "utf-8"
           );
           let data = "";
-          stream.on("data", (chunk) => (data += chunk));
+          stream.on("data", (chunk) => (data += chunk + "\n"));
           stream.on("end", () =>
             fs.appendFile(
               path.join(__dirname, "project-dist", "bundle.css"),
